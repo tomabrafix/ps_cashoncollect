@@ -1,12 +1,16 @@
 {
-    "name": "prestashop/ps_cashondelivery",
-    "description": "PrestaShop module ps_cashondelivery",
-    "homepage": "https://github.com/PrestaShop/ps_cashondelivery",
+    "name": "prestashop/ps_cashoncollect",
+    "description": "PrestaShop module ps_cashoncollect",
+    "homepage": "https://github.com/tomabrafix/ps_cashoncollect",
     "license": "AFL-3.0",
     "authors": [
         {
             "name": "PrestaShop SA",
             "email": "contact@prestashop.com"
+        },
+        {
+            "name": "Tom Kunze",
+            "email": "mail@tomabrafix.de"
         }
     ],
     "require": {
@@ -26,7 +30,7 @@
     },
     "autoload": {
         "classmap": [
-            "ps_cashondelivery.php",
+            "ps_cashoncollect.php",
             "controllers"
         ]
     },
@@ -36,5 +40,5 @@
         ]
     },
     "type": "prestashop-module",
-    "author": "PrestaShop"
+    "author": "PrestaShop + Tom Kunze"
 }

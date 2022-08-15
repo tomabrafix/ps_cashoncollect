@@ -17,6 +17,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
  *}
 
-<section id="ps_cashondelivery-paymentOptions-additionalInformation">
-  <p>{l s='You pay for the merchandise upon delivery' d='Modules.Cashondelivery.Shop'}</p>
+<section id="ps_cashoncollect-paymentOptions-additionalInformation">
+  <p>{l s='You pay upon collection.' d='Modules.Cashoncollect.Shop'}</p>
 </section>

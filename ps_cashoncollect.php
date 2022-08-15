@@ -27,21 +27,21 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
 
 use PrestaShop\PrestaShop\Core\Payment\PaymentOption;
 
-class Ps_Cashondelivery extends PaymentModule
+class Ps_Cashoncollect extends PaymentModule
 {
     const HOOKS = [
         'displayOrderConfirmation',
         'paymentOptions',
     ];
 
-    const CONFIG_OS_CASH_ON_DELIVERY = 'PS_OS_COD_VALIDATION';
+    const CONFIG_OS_CASH_ON_COLLECT = 'PS_OS_COC_VALIDATION';
 
     /**
      * {@inheritdoc}
      */
     public function __construct()
     {
-        $this->name = 'ps_cashondelivery';
+        $this->name = 'ps_cashoncollect';
         $this->tab = 'payments_gateways';
         $this->author = 'PrestaShop';
         $this->version = '2.0.1';
@@ -52,8 +52,8 @@ class Ps_Cashondelivery extends PaymentModule
 
         parent::__construct();
 
-        $this->displayName = $this->trans('Cash on delivery (COD)', [], 'Modules.Cashondelivery.Admin');
-        $this->description = $this->trans('Accept cash payments on delivery to make it easy for customers to purchase on your store.', [], 'Modules.Cashondelivery.Admin');
+        $this->displayName = $this->trans('Cash on Collect', [], 'Modules.Cashoncollect.Admin');
+        $this->description = $this->trans('Accept cash payments on collection to make it easy for customers to purchase on your store.', [], 'Modules.Cashoncollect.Admin');
     }
 
     /**
@@ -84,13 +84,13 @@ class Ps_Cashondelivery extends PaymentModule
             return [];
         }
 
-        $cashOnDeliveryOption = new PaymentOption();
-        $cashOnDeliveryOption->setModuleName($this->name);
-        $cashOnDeliveryOption->setCallToActionText($this->trans('Pay by Cash on Delivery', [], 'Modules.Cashondelivery.Shop'));
-        $cashOnDeliveryOption->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
-        $cashOnDeliveryOption->setAdditionalInformation($this->fetch('module:ps_cashondelivery/views/templates/hook/paymentOptions-additionalInformation.tpl'));
+        $cashOnCollectOption = new PaymentOption();
+        $cashOnCollectOption->setModuleName($this->name);
+        $cashOnCollectOption->setCallToActionText($this->trans('Pay by Cash on Collect', [], 'Modules.Cashoncollect.Shop'));
+        $cashOnCollectOption->setAction($this->context->link->getModuleLink($this->name, 'validation', [], true));
+        $cashOnCollectOption->setAdditionalInformation($this->fetch('module:ps_cashoncollect/views/templates/hook/paymentOptions-additionalInformation.tpl'));
 
-        return [$cashOnDeliveryOption];
+        return [$cashOnCollectOption];
     }
 
     /**
@@ -114,7 +114,7 @@ class Ps_Cashondelivery extends PaymentModule
             'contact_url' => $this->context->link->getPageLink('contact', true),
         ]);
 
-        return $this->fetch('module:ps_cashondelivery/views/templates/hook/displayOrderConfirmation.tpl');
+        return $this->fetch('module:ps_cashoncollect/views/templates/hook/displayOrderConfirmation.tpl');
     }
 
     /**
@@ -122,8 +122,8 @@ class Ps_Cashondelivery extends PaymentModule
      */
     public function installOrderState()
     {
-        if (Configuration::getGlobalValue(Ps_Cashondelivery::CONFIG_OS_CASH_ON_DELIVERY)) {
-            $orderState = new OrderState((int) Configuration::getGlobalValue(Ps_Cashondelivery::CONFIG_OS_CASH_ON_DELIVERY));
+        if (Configuration::getGlobalValue(Ps_Cashoncollect::CONFIG_OS_CASH_ON_COLLECT)) {
+            $orderState = new OrderState((int) Configuration::getGlobalValue(Ps_Cashoncollect::CONFIG_OS_CASH_ON_COLLECT));
 
             if (Validate::isLoadedObject($orderState) && $this->name === $orderState->module_name) {
                 return true;
@@ -131,54 +131,10 @@ class Ps_Cashondelivery extends PaymentModule
         }
 
         return $this->createOrderState(
-            static::CONFIG_OS_CASH_ON_DELIVERY,
+            static::CONFIG_OS_CASH_ON_COLLECT,
             [
-                'en' => 'Awaiting Cash On Delivery validation',
-                'bs' => 'Čeka validaciju Plaćanje po dostavi',
-                'ca' => 'Esperant la validació del pagament contra reemborsament',
-                'da' => 'Afventer godkendelse af levering pr. efterkrav',
-                'de' => 'Warten auf Zahlungseingang Nachnahme',
-                'et' => 'Ootab sularaha kauba kättesaamisel kinnitust',
-                'es' => 'En espera de validación por contra reembolso.',
-                'mx' => 'En espera de validación por pago contra entrega',
-                'fr' => 'En attente de paiement à la livraison',
-                'qc' => 'En attente de paiement à la livraison',
-                'gl' => 'Agardando a validación do Pago Contra Reembolso',
-                'hr' => 'Awaiting cod validation',
-                'id' => 'Awaiting cod validation',
-                'it' => 'In attesa verifica contrassegno',
-                'lv' => 'Gaida skaidrās naudas apmaksas apstiprinājumu',
-                'hu' => 'Awaiting cod validation',
-                'nl' => 'Wachten op bevestiging (rembours)',
-                'no' => 'Awaiting cod validation',
-                'pl' => 'Oczekiwanie na płatność przy odbiorze',
-                'br' => 'Aguardando validação de pagamento na entrega',
-                'pt' => 'Awaiting cod validation',
-                'ro' => 'In asteptarea confirmarii platii la livrare',
-                'sq' => 'Në pritje të pagesës gjatë dorëzimit',
-                'sk' => 'Čaká sa na potvrdenie platby dobierkou',
-                'sr' => 'Čeka se potvrda keširanja pri isporuci',
-                'fi' => 'Odottaa maksuvahvistusta',
-                'sv' => 'Väntar på postförskott validering',
-                'tr' => 'Kapıda ödeme onayı bekleniyor',
-                'lt' => 'Awaiting cod validation',
-                'si' => 'Čaka potrdilo za plačilo po povzetju',
-                'vn' => 'Chờ xác nhận thanh toán COD',
-                'cs' => 'Čeká se na potvrzení dobírky',
-                'el' => 'Αναμονή επικύρωσης Αντικαταβολής',
-                'ru' => 'Ожидается подтверждение оплаты наличными',
-                'uk' => 'Очікується платіж післяплатою',
-                'bg' => 'В очакване на валидиране на плащане при доставка',
-                'mk' => 'Awaiting cod validation',
-                'he' => 'Awaiting cod validation',
-                'fa' => 'Awaiting cod validation',
-                'hi' => 'Awaiting Cash On Delivery validation',
-                'bn' => 'Awaiting cod validation',
-                'ar' => 'بإنتظار المصادقة على الدفع عند الإستلام',
-                'ja' => '代金引換払い確認待ち',
-                'zh' => '接受远程付费',
-                'tw' => '等待貨到付款驗證',
-                'ko' => '배송시 현금 지불 확인 대기',
+                'en' => 'Awaiting Cash On Collect validation',
+                'de' => 'Warten auf Zahlungseingang Barzahlung',
             ],
             true === (bool) version_compare(_PS_VERSION_, '1.7.7.0', '>=') ? '#4169E1' : '#34219E'
         );

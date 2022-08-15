@@ -21,7 +21,7 @@
 /**
  * This Controller receives customer after approval on checkout page
  */
-class Ps_CashondeliveryValidationModuleFrontController extends ModuleFrontController
+class Ps_CashoncollectValidationModuleFrontController extends ModuleFrontController
 {
     /**
      * {@inheritdoc}
@@ -64,7 +64,7 @@ class Ps_CashondeliveryValidationModuleFrontController extends ModuleFrontContro
 
         $this->module->validateOrder(
             (int) $this->context->cart->id,
-            (int) Configuration::getGlobalValue(Ps_Cashondelivery::CONFIG_OS_CASH_ON_DELIVERY),
+            (int) Configuration::getGlobalValue(Ps_Cashoncollect::CONFIG_OS_CASH_ON_COLLECT),
             (float) $this->context->cart->getOrderTotal(true, Cart::BOTH),
             $this->module->displayName,
             null,

@@ -17,9 +17,9 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
  *}
 
-<section id="ps_cashondelivery-displayOrderConfirmation">
-  <p>{l s='Your order on %s is complete.' sprintf=[$shop_name] d='Modules.Cashondelivery.Shop'}</p>
-  <p>{l s='You have chosen the cash on delivery method.' d='Modules.Cashondelivery.Shop'}</p>
-  <p>{l s='Your order will be sent very soon.' d='Modules.Cashondelivery.Shop'}</p>
-  <p>{l s='For any questions or for further information, please contact our' d='Modules.Cashondelivery.Shop'} <a href="{$contact_url}" rel="nofollow">{l s='customer support' d='Modules.Cashondelivery.Shop'}</a>.</p>
+<section id="ps_cashoncollect-displayOrderConfirmation">
+  <p>{l s='Your order on %s is complete.' sprintf=[$shop_name] d='Modules.Cashoncollect.Shop'}</p>
+  <p>{l s='You have chosen the cash on collect method.' d='Modules.Cashoncollect.Shop'}</p>
+  <p>{l s='Your order will be prepared very soon.' d='Modules.Cashoncollect.Shop'}</p>
+  <p>{l s='For any questions or for further information, please contact our' d='Modules.Cashoncollect.Shop'} <a href="{$contact_url}" rel="nofollow">{l s='customer support' d='Modules.Cashoncollect.Shop'}</a>.</p>
 </section>

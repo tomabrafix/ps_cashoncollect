@@ -1,8 +1,8 @@
-# Cash on delivery (COD)
+# Cash on collect
 
 ## About
 
-Accept cash payments on delivery to make it easy for customers to purchase on your store.
+Accept cash payments on collection to make it easy for customers to purchase on your store.
 
 ## Multistore compatibility
 
@@ -25,7 +25,7 @@ Just make sure to follow our [contribution guidelines][contribution-guidelines].
 
 This module is released under the [Academic Free License 3.0][AFL-3.0] 
 
-[report-issue]: https://github.com/PrestaShop/PrestaShop/issues/new/choose
+[report-issue]: https://github.com/tomabrafix/ps_cashoncollect/issues
 [prestashop]: https://www.prestashop.com/
 [contribution-guidelines]: https://devdocs.prestashop.com/1.7/contribute/contribution-guidelines/project-modules/
 [AFL-3.0]: https://opensource.org/licenses/AFL-3.0
