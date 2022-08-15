@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin8905luk2a" source-language="de-DE" target-language="de-DE" datatype="plaintext">
+    <body>
+      <trans-unit id="5093f5d757f0afa3e0cca364ccc1da41">
+        <source>Pay by Cash on Collect</source>
+        <target>Bei Abholung bezahlen</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="88526efe38fd18179a127024aba8c1d7">
+        <source>Your order on %s is complete.</source>
+        <target>Ihre Bestellung auf %s ist abgeschlossen.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c30e18297e61e42e8d403ab03dc3e91e">
+        <source>You have chosen the cash on collect method.</source>
+        <target>Sie haben Zahlung bei Abholung gewählt.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="8f412707326396dd72b963ab213447fc">
+        <source>Your order will be prepared very soon.</source>
+        <target>Ihre Bestellung wird sehr bald vorbereitet werden.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0db71da7150c27142eef9d22b843b4a9">
+        <source>For any questions or for further information, please contact our</source>
+        <target>Bei Fragen oder für weitere Informationen kontaktieren Sie bitte unseren</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="64430ad2835be8ad60c59e7d44e4b0b1">
+        <source>customer support</source>
+        <target>Kundendienst</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="768685c318b7657aa0ce5a47235705bd">
+        <source>You pay upon collection.</source>
+        <target>Sie bezahlen die Ware bei Abholung.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

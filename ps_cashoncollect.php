@@ -250,4 +250,9 @@ class Ps_Cashoncollect extends PaymentModule
 
         return true;
     }
+
+    public function isUsingNewTranslationSystem()
+    {
+        return true;
+    }
 }

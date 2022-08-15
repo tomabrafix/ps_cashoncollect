@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin8905luk2a" source-language="de-DE" target-language="de-DE" datatype="plaintext">
+    <body>
+      <trans-unit id="9f619e29975240564acb69b054a1262b">
+        <source>Cash on Collect</source>
+        <target>Zahlung bei Abholung</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="cd60ac04edb2f1bc4e2381ef1aff702c">
+        <source>Accept cash payments on collection to make it easy for customers to purchase on your store.</source>
+        <target>Mit Zahlung bei Abholung wird es einfacher für deine Kunden in deinem Shop einzukaufen.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
